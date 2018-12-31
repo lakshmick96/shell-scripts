@@ -1,0 +1,11 @@
+#Write a shell script which will move all executable files in the current directory to a folder called "executables" (hint: read the man page of "test"; "test" can check many different attributes of a file)
+
+
+mkdir executables
+for file in *
+    do
+        if [ -x "$file" ]
+            then
+                mv "$file" executables/"$file"
+        fi
+    done

@@ -1,0 +1,10 @@
+#Write a shell script which will move all files in the current directory containing the word "linux" into a separate folder called "linux-files".
+
+mkdir linux-files
+for file in *
+do
+    echo "$file" > files
+    i=$( grep -i linux files )
+    mv "$i" linux-files/"$i"
+done
+rm files
